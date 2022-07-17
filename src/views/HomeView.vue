@@ -94,10 +94,10 @@ export default {
     </div>
     <div v-if="error" class="error">
       <h1>
-        Error loading blog post, please refresh this page or try again later...
+        Error loading blog posts, please refresh this page or try again later...
       </h1>
     </div>
-    <section v-if="!loading" id="top-banner">
+    <section v-if="!loading && !error" id="top-banner">
       <div class="banner-post-img">
         <img :src="`${bannerPost?.jetpack_featured_media_url}`" />
       </div>
@@ -118,7 +118,7 @@ export default {
         </div>
       </div>
     </section>
-    <section v-if="!loading" id="blog-posts">
+    <section v-if="!loading && !error" id="blog-posts">
       <CardItem
         v-for="post in posts"
         v-bind:key="post?.id"

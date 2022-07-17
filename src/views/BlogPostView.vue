@@ -67,7 +67,12 @@ export default {
     <div v-if="loadingPost" class="loading">
       <h1>Please wait while the Post is loading...</h1>
     </div>
-    <section v-if="!loadingPost && post != {}" class="full-post">
+    <div v-if="error" class="error">
+      <h1>
+        Error loading blog posts, please refresh this page or try again later...
+      </h1>
+    </div>
+    <section v-if="!loadingPost && post != {} && !error" class="full-post">
       <div class="postProp">
         <span class="author"
           >By {{ post?.parsely?.meta?.author[0]?.name }}
@@ -81,7 +86,7 @@ export default {
     </section>
     <section class="related-posts">
       <h4 class="more-article-title">More Articles</h4>
-      <div v-if="!loadingMorePosts" class="more-article-posts">
+      <div v-if="!loadingMorePosts && !error" class="more-article-posts">
         <CardItem
           v-for="post in morePosts"
           v-bind:key="post?.id"
@@ -104,7 +109,7 @@ export default {
   height: auto;
   object-fit: contain;
 }
-.loading {
+.loading, .error {
   text-align: center;
   width: 100%;
   height: 85vh;
