@@ -12,14 +12,14 @@ export default {
       loadingPost: false,
       loadingMorePosts: false,
       error: false,
-      postId: "",
+      postId: this.$route.params.id,
     };
   },
   methods: {
     async postCall(id) {
       this.loadingPost = true;
       await axios
-        .get(`https://techcrunch.com/wp-json/wp/v2/posts/${id}`)
+        .get(`https://techcrunch.com/wp-json/wp/v2/posts/${id || this.postId}`)
         .then((response) => {
           this.post = response.data;
         })
