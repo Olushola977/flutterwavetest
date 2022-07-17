@@ -51,9 +51,12 @@ export default {
         payment_options: "card",
         callback: (payment) => {
           if (payment?.status === "successful") {
-            setTimeout(window.location.replace("http://localhost:3000"), 10000);
+            setTimeout(
+              window.location.replace("https://fluttertesttest.netlify.app/"),
+              10000
+            );
           } else {
-            window.location.replace("http://localhost:3000");
+            window.location.replace("https://fluttertesttest.netlify.app/");
           }
         },
         meta: {
