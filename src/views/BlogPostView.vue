@@ -81,10 +81,7 @@ export default {
     </section>
     <section class="related-posts">
       <h4 class="more-article-title">More Articles</h4>
-      <div
-        v-if="!loadingMorePosts && this.morePosts.length > 0"
-        class="more-article-posts"
-      >
+      <div v-if="!loadingMorePosts" class="more-article-posts">
         <CardItem
           v-for="post in morePosts"
           v-bind:key="post?.id"
