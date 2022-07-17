@@ -30,7 +30,7 @@ export default {
       this.loadingPost = false;
     },
     async morePostCall() {
-      await this.axios
+      await axios
         .get("https://techcrunch.com/wp-json/wp/v2/posts?per_page=6")
         .then((response) => {
           const shufflePost = response?.data?.sort(() => 0.5 - Math.random());
