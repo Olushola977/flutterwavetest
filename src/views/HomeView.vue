@@ -90,7 +90,7 @@ export default {
 <template>
   <main>
     <div v-if="loading" class="loading">
-      <h1>Please wait, Blog posts is loading...</h1>
+      <h1>Please wait, Blog posts is loading....</h1>
     </div>
     <div v-if="error" class="error">
       <h1>
