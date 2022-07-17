@@ -1,0 +1,39 @@
+@import "./base.css";
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: url("./fonts/FontsFree-Net-SFProText-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: url("./fonts/SFPRODISPLAYBOLD.OTF") format("OTF");
+}
+
+#app {
+  font-weight: normal;
+  font-family: SF Pro Text;
+}
+.page {
+  width: 95%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+
+}
+
+@media (min-width: 1024px) {
+  .page {
+    width: 85%;
+  }
+}
